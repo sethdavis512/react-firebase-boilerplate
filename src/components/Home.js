@@ -11,7 +11,7 @@ const Home = () => {
                 Home
             </h1>
             <Button
-                onClick={handleSignOut}
+                handleClick={handleSignOut}
                 text="Sign Out"
             />
         </>
