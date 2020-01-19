@@ -28,9 +28,9 @@ const Register = ({ history }) => {
         }
     }, [history]);
     return (
-        <div>
+        <>
             <h1 className="title is-1">
-                Login
+                Register
             </h1>
             <form onSubmit={handleFormSubmit}>
                 <InputText
@@ -49,7 +49,7 @@ const Register = ({ history }) => {
                 />
                 <Button type="submit" text="Submit" />
             </form>
-        </div>
+        </>
     )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/Button';
 
 import db from '../firebaseConfig';
 
@@ -6,12 +7,13 @@ const Home = () => {
     const handleSignOut = () => db.auth().signOut();
     return (
         <>
-            <h1>Home</h1>
-            <button
+            <h1 className="title is-1">
+                Home
+            </h1>
+            <Button
                 onClick={handleSignOut}
-            >
-                Sign Out
-            </button>
+                text="Sign Out"
+            />
         </>
     )
 };

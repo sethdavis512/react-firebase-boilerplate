@@ -36,7 +36,7 @@ const Login = ({ history }) => {
     }
 
     return (
-        <div>
+        <>
             <h1 className="title is-1">
                 Login
             </h1>
@@ -57,7 +57,7 @@ const Login = ({ history }) => {
                 />
                 <Button type="submit" text="Submit" />
             </form>
-        </div>
+        </>
     )
 }
 
