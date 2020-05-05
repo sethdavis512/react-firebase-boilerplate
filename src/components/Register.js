@@ -5,17 +5,18 @@ import { Routes } from '../routes';
 
 import InputText from './InputText';
 import Button from './Button';
+import Wrapper from './Wrapper';
 
 const Register = ({ history }) => {
     const [email, setEmail] = useState('');
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
-    }
+    };
 
     const [password, setPassword] = useState('');
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
-    }
+    };
 
     const handleFormSubmit = useCallback(async event => {
         event.preventDefault();
@@ -27,8 +28,9 @@ const Register = ({ history }) => {
             alert(error);
         }
     }, [history]);
+
     return (
-        <>
+        <Wrapper isCentered>
             <h1 className="title is-1">
                 Register
             </h1>
@@ -49,8 +51,8 @@ const Register = ({ history }) => {
                 />
                 <Button type="submit" text="Submit" />
             </form>
-        </>
-    )
+        </Wrapper>
+    );
 }
 
 export default Register;

@@ -6,6 +6,7 @@ import { Routes } from '../routes';
 import { AuthContext } from '../Auth';
 import InputText from './InputText';
 import Button from './Button';
+import Wrapper from './Wrapper';
 
 const Login = ({ history }) => {
     const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ const Login = ({ history }) => {
     }
 
     return (
-        <>
+        <Wrapper isCentered>
             <h1 className="title is-1">
                 Login
             </h1>
@@ -57,7 +58,7 @@ const Login = ({ history }) => {
                 />
                 <Button type="submit" text="Submit" />
             </form>
-        </>
+        </Wrapper>
     )
 }
 

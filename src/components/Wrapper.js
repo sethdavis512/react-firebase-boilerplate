@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Wrapper = ({ children, isCentered = true, size = 'half' }) => {
+const Wrapper = ({ children, isCentered = false, size = 'half' }) => {
     const columnsClassName = classnames('columns', {
         'is-centered': isCentered
     });
