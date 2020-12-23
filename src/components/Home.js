@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import Button from '../components/Button';
-import Wrapper from '../components/Wrapper';
+import React, { useEffect, useState } from 'react'
+import Button from '../components/Button'
+import Wrapper from '../components/Wrapper'
 
-import db from '../firebaseConfig';
+import db from '../firebaseConfig'
 
 const Home = () => {
-    const handleSignOut = () => db.auth().signOut();
-    const [items, setItems] = useState([]);
+    const handleSignOut = () => db.auth().signOut()
+    const [items, setItems] = useState([])
 
     useEffect(() => {
         const fetch = async () => {
-            const store = db.firestore();
-            const querySnapshot = await store.collection('products').get();
-            const data = querySnapshot.docs.map(doc => doc.data());
-            setItems(data);
-        };
+            const store = db.firestore()
+            const querySnapshot = await store
+                .collection(process.env.REACT_APP_FIREBASE_DEFAULT_COLLECTION)
+                .get()
+            const data = querySnapshot.docs.map(doc => doc.data())
+            setItems(data)
+        }
 
-        fetch();
-    }, []);
+        fetch()
+    }, [])
 
     return (
         <Wrapper>
@@ -25,7 +27,7 @@ const Home = () => {
             {JSON.stringify(items)}
             <Button handleClick={handleSignOut} text="Sign Out" />
         </Wrapper>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home
