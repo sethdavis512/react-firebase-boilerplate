@@ -1,9 +1,9 @@
-import React, { useCallback, useContext, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Redirect, withRouter } from 'react-router'
 
 import db from '../firebaseConfig'
 import { Routes } from '../routes'
-import { AuthContext } from '../Auth'
+import { useAuthContext } from '../Auth'
 import InputText from './InputText'
 import Button from './Button'
 import Wrapper from './Wrapper'
@@ -35,7 +35,7 @@ const Login = ({ history }) => {
         [history]
     )
 
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser } = useAuthContext()
 
     if (currentUser) {
         return <Redirect to={Routes.HOME} />
