@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputText = ({ id, label, name, type, handleChange }) => {
+const InputText = ({ id, label, name, type, handleChange, value }) => {
     return (
         <div className="field">
             <label className="label" htmlFor={id}>
@@ -13,6 +13,7 @@ const InputText = ({ id, label, name, type, handleChange }) => {
                     name={name}
                     type={type}
                     onChange={handleChange}
+                    value={value}
                 />
             </div>
         </div>
